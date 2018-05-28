@@ -1,0 +1,17 @@
+{
+    "name": "pinterest",
+    "version": "1.0.0",
+    "description": "FreeCodeCamp Pinterest Clone",
+    "main": "pinterest_server.js",
+    "scripts": {
+        "start": "nodemon pinterest_server.js"
+    },
+    "author": "Emmanuel",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.3",
+        "mysql": "^2.15.0",
+        "nodemon": "^1.17.4"
+    }
+}

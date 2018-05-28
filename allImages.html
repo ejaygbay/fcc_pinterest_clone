@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pinterest Clone</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/pinterest.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/pinterest.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allImages.html">All Images</a></li>
+                        <li><a href="myImages.html">My Images</a></li>
+                        <li>
+                            <a href="../views/index.html" class="waves-effect waves-light btn social twitter">Sign Out</a>
+                        </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allImages.html">All Images</a></li>
+                        <li><a href="myImages.html">My Images</a></li>
+                        <li><a href="../views/index.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- your polls -->
+        <div class="row">
+            <!-- space left -->
+            <div class="col l3 m2 s1">
+                <!--<input type="button" onclick="genDivs()" value="click me">
+                <div id="code"></div>-->
+            </div>
+
+            <!-- list of your polls -->
+            <div class="col l6 m8 s10">
+                <div class="row">
+                    <h4>List Of Images</h4>
+                </div>
+                <div class="row">
+                    <div class="col l8 m8 s8">
+                        <input type="text" id="search" placeholder="Enter Book">
+                    </div>
+                    <div class="col l4 m4 s4">
+                        <button class="btn waves-effect waves-light" id="submit">Send</button>
+                    </div>
+                    <div class="col l3 m3 s3"></div>
+                </div>
+                <div class="row">
+                    <table class="bordered highlight" id="your_poll_list"></table>
+                    <!--<input type="button" onclick="genDivs()" value="click me">-->
+                    <div id="code"></div>
+                </div>
+                <!--<div class="row">
+                    <button class="btn waves-effect waves-light" type="clear()" name="action">Delete<i class="material-icons right">delete</i>
+                    </button>
+                </div>-->
+            </div>
+
+            <!-- space right -->
+            <div class="col l3 m2 s1">
+                <!--<img src="../image.png" style="width:inherit; height: inherit">-->
+                <!--<img src="" alt="" id="imgs">-->
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // $("#yourPolls").click(function() {
+        var doc;
+        $("#submit").click(function() {
+            doc = document.getElementById("search").value;
+            // alert(doc);
+            searchBook();
+        });
+
+        // function genDivs() {
+        //     // var e = document.body; // whatever you want to append the rows to: 
+        //     var allCells = document.getElementById("code");
+        //     for (var i = 0; i < 10; i++) {
+        //         var row = document.createElement("div");
+        //         row.className = "row";
+        //         for (var x = 1; x <= 4; x++) {
+        //             var cell = document.createElement("div");
+        //             cell.className = "col l3 m3 s3 allDivs";
+        //             cell.innerHTML = '<img src="../image.png" style="width:130px; height:inherit">';
+        //             // cell.innerHTML = (i * 10) + x;
+        //             row.appendChild(cell);
+        //         }
+        //         allCells.appendChild(row);
+        //     }
+        //     document.getElementById("code").innerHTML = allCells.innerHTML;
+        // }
+
+        function searchBook() {
+            var xhttp;
+            var yourData;
+            var your_poll_list = [];
+            var cell3;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    yourData = JSON.parse(xhttp.responseText);
+                    console.log(yourData.items.length);
+                    var i;
+                    var tabl = document.getElementById("your_poll_list");
+                    $('#your_poll_list tr').html(''); // clear the table for other item
+                    var title, ids, image = [],
+                        preview;
+                    for (i = 0; i < yourData.items.length; i++) {
+                        ids = yourData.items[i].id;
+                        image.push(yourData.items[i].volumeInfo.imageLinks.smallThumbnail);
+                        title = yourData.items[i].volumeInfo.title;
+                        preview = yourData.items[i].volumeInfo.previewLink;
+
+                        var row = tabl.insertRow();
+                        row.id = ids; // give "id" to each poll, and the id is the "poll_id" from the database
+                        row.className = "trs"; // give the all option rows the class "trs"
+
+                        var cell1 = row.insertCell();
+                        cell1.innerHTML = '<a href="http://books.google.com/books?id=' + yourData.items[i].id + '&printsec=frontcover&dq=' + doc + '&hl=&cd=1&source=gbs_api">' + title + '</a>';
+
+                        cell3 = row.insertCell();
+                        // cell3.innerHTML = '<img>'
+
+                        for (var k = 0; k < image.length; k++) {
+                            cell3.innerHTML = '<img>';
+                            $("img").attr("src", "http://books.google.com/books/content?id=" + yourData.items[i].id + "&printsec=frontcover&img=1&zoom=5&source=gbs_api");
+                        }
+
+
+                        // image = document.getElementById('imgDisp');
+                        // image.src = imgName;
+                        // '<a href="test.html">' + imgEl + '</a>'
+
+                        console.log(image[i]);
+                        console.log(image);
+                        // console.log(img);
+                        // console.log(typeof(img));
+                        // console.log("==============================================");
+
+                        // $("#imgs img").attr("src", image);
+                        // var link = document.getElementById(ids);
+                        // var img = $("img").attr("src", image);
+                        // $("#imgs img").attr("src", image);
+                        // image = document.getElementById('imgDisp');
+                        // image.src = imgName;
+                        // '<a href="test.html">' + imgEl + '</a>'
+
+
+                        // var allCells = document.getElementById("code");
+                        // for (var d = 0; d < 10; d++) {
+                        //     var row = document.createElement("div");
+                        //     row.className = "row";
+                        //     for (var x = 1; x <= 4; x++) {
+                        //         var cell = document.createElement("div");
+                        //         cell.className = "col l3 m3 s3 allDivs";
+                        //         cell.innerHTML = '<img style="width:130px; height:inherit">';
+                        //         // cell.innerHTML = (i * 10) + x;
+                        //         row.appendChild(cell);
+                        //     }
+                        //     allCells.appendChild(row);
+                        // }
+                        // document.getElementById("code").innerHTML = allCells.innerHTML;
+                    }
+
+                    // console.log(image.length);
+                    // console.log(image);
+                    // console.log(image[i]);
+                    // console.log(img);
+                    // console.log(img[i]);
+
+                    // var allCells = document.getElementById("code");
+                    //     for (var d = 0; d < 10; d++) {
+                    //         var row = document.createElement("div");
+                    //         row.className = "row";
+                    //         for (var x = 1; x <= 4; x++) {
+                    //             var cell = document.createElement("div");
+                    //             cell.className = "col l3 m3 s3 allDivs";
+                    //             cell.innerHTML = '<img style="width:130px; height:inherit">';
+                    //             // cell.innerHTML = (i * 10) + x;
+                    //             row.appendChild(cell);
+                    //         }
+                    //         allCells.appendChild(row);
+                    //     }
+                    //     document.getElementById("code").innerHTML = allCells.innerHTML;
+                    // var img = $("img").attr("src", image);
+                };
+            };
+            xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes?q=" + doc + "&key=AIzaSyAEBAidZyJuBnD8Oc2VWbYN8dxJBJaqxCA", true);
+            xhttp.send(xhttp.responseText);
+            // });
+        }
+    </script>
+</body>
+
+</html>

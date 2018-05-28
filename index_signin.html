@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pinterest Clone</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/pinterest.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/pinterest.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allImages.html">All Images</a></li>
+                        <li><a href="myImages.html">My Images</a></li>
+                        <li>
+                            <a href="../views/index.html" class="waves-effect waves-light btn social twitter">Sign Out</a>
+                        </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allImages.html">All Images</a></li>
+                        <li><a href="myImages.html">My Images</a></li>
+                        <li><a href="../views/index.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- your polls -->
+        <div class="row">
+            <!-- space left -->
+            <div class="col l3 m2 s1"></div>
+
+            <!-- list of your polls -->
+            <div class="col l6 m8 s10">
+                <div class="row">
+                    <label for="form">Image URL</label>
+                    <form action="upload_image" method="post" class="col l12 m12 s12">
+                        <input type="text" name="imgURL" placeholder="Enter Image Url">
+                        <input type="button" id="btn" value="Submit">
+                    </form>
+                </div>
+                <div class="row">
+                    <input type="button" id="btn2" value="Click">
+                    <div class="grid" id="grid"></div>
+                </div>
+            </div>
+
+            <!-- space right -->
+            <div class="col l3 m2 s1">
+                <div id="code"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

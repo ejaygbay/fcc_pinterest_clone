@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pinterest Clone</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/pinterest.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="../js/masonry-docs/masonry.pkgd.min.js"></script>
+    <!--/*<script src="../js/jquery.js"></script>*/-->
+    <script src="../js/materialize.js"></script>
+    <script src="../js/pinterest.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/views/index.html">Home</a></li>
+                        <!--<li>
+                            <a href="../views/myAccount.html" class="waves-effect waves-light btn social twitter">SignIn</a>
+                        </li>-->
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="/views/index.html">Home</a></li>
+                        <!--<li><a href="../views/myAccount.html">SignIn</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav1">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav2">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav3">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav4">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav5">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav6">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav7">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav8">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav9">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://midnight-dust.glitch.me/img/5b032039e0cee5004e4b2e65.jpeg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav10">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://midnight-dust.glitch.me/img/5b02ed853d858a004d5cdef9.jpeg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav11">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l3 m3 s3">
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <img src="https://midnight-dust.glitch.me/img/5ae8ff25af7e4b004eb90b3e.jpeg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l8 m8 s8">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="col l4 m4 s4">
+                            <div class="col l6 m6 s6">
+                                <i class="favorite tiny material-icons" id="fav12">favorite_border</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

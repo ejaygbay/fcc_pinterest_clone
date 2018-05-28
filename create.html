@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pinterest Clone</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/pinterest.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/pinterest.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="myAccount.html" class="waves-effect waves-light btn social twitter">SignIn</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="myAccount.html">SignIn</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- new polls -->
+        <div class="row">
+            <!-- space left -->
+            <div class="col l3 m2 s1"></div>
+
+            <!-- new poll section -->
+            <div class="col l6 m8 s10">
+                <div class="row">
+                    <h4>Create New Account</h4>
+                </div>
+                <div class="row">
+                    <form action="createAcc" method="post" class="col l12 m12 s12">
+                        <div class="row">
+                            <div class="input-field col l12 m12 s12">
+                                <div class="col l3 m4 s12">
+                                    <h5>Name :</h5>
+                                </div>
+                                <div class="col l3 m2 s12">
+                                    <input placeholder="First" id="fName" name="fName" type="text" class="validate" required>
+                                </div>
+                                <div class="col l3 m2 s12">
+                                    <input placeholder="Middle" id="mName" name="mName" type="text" class="validate">
+                                </div>
+                                <div class="col l3 m2 s12">
+                                    <input placeholder="Last" id="lName" name="lName" type="text" class="validate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col l12 m12 s12">
+                                <div class="col l3 m4 s12">
+                                    <h5>UserName :</h5>
+                                </div>
+                                <div class="col l9 m8 s12">
+                                    <input placeholder="Enter Your User Name" id="uName" name="uName" type="text" class="validate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col l12 m12 s12">
+                                <div class="col l3 m3 s12">
+                                    <h5>Password :</h5>
+                                </div>
+                                <div class="col l9 m9 s12">
+                                    <input placeholder="Password" id="password" name="password" type="password" class="validate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col l12 m12 s12">
+                                <button class="btn waves-effect waves-light" type="submit" id="submit">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- space right -->
+            <div class="col l3 m2 s1"></div>
+        </div>
+    </div>
+</body>
+
+</html>

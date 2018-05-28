@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Trading App</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/materialize.css">
+    <link rel="stylesheet" href="../css/book_trade.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script src="../js/book_trade.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allBooks.html">All Books</a></li>
+                        <li><a href="myBooks.html" id="yourPolls">My Books</a></li>
+                        <li>
+                            <a href="../views/index.html" class="waves-effect waves-light btn social twitter">Sign Out</a>
+                        </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="index_signin.html">Home</a></li>
+                        <li><a href="allBooks.html">All Books</a></li>
+                        <li><a href="myBooks.html" id="yourPolls">My Books</a></li>
+                        <li><a href="../views/index.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- poll info-->
+        <div class="row">
+            <!-- polls list-->
+            <div class="col l4 m3 s12">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>List Of Polls</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col l1 m1 s1"></div>
+                    <div class="col col l10 m10 s10 size_of_items">
+                        <table class="highlight centered" id="pollsTable" name="selected_poll"></table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col l6 m6 s6"></div>
+                    <div class="col col l6 m6 s6">
+                        <!--<button class="btn waves-effect waves-light" id="select">Select</button>-->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- vote and result section-->
+            <div class="col l8 m9 s12">
+                <div class="row">
+                    <!-- graph section-->
+                    <div class="col l6 m6 s6">
+                        <div class="row">
+                            <h4>Result In Graph</h4>
+                        </div>
+                        <div class="row">
+                            <!-- graph -->
+                            <div class="col l12 m12 s12">
+                                <!--<p id="para"></p>-->
+                                <canvas id="myChart" width="400" height="400"></canvas>
+                                <!--<canvas id="popChart" width="600" height="400"></canvas>-->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- voting section-->
+                    <div class="col l6 m6 s6">
+                        <div class="row">
+                            <div class="row">
+                                <h4>Choose Your Option</h4>
+                            </div>
+                            <div class="col l12 m12 s12 size_of_items">
+                                <table class="highlight centered" id="pollsOption" name="selected_poll"></table>
+                                <button class="btn waves-effect waves-light" id="cast_vote" type="submit">Vote
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
